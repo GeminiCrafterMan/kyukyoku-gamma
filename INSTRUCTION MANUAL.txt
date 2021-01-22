@@ -1,0 +1,220 @@
+Sonic The Hedgehog Kyukyoku Instruction Manual
+
+------------Story--------------
+Sonic and Shadow were, once again, going head to head. While racing through Chaotic Mound, they noticed Infinite, being a goddamn edgelord and screaming to nobody about how he's not weak or something.
+Sonic looked to Shadow and said "Why is Infinite still here?"
+And so their journey began.
+Little did they know, Metal Sonic was right behind them.
+Mighty hopped down from his perch up on a cliff and followed the three.
+
+------------Characters------------
+
+Sonic the Hedgehog: Carefree blue hero. Able to travel at high speeds. Sonic's moves revolve around speed and platforming.
+Shadow the Hedgehog: Mysterious anti-hero. Can move quite fast, but not as fast as Sonic. Shadow's moves revolve around combat and platforming.
+Metal Sonic: Deadly robot duplicate. Can do nothing special as of now.
+Mighty the Armadillo: Chaotix powerhouse. Can kick off of walls.
+
+----------Kyukyoku Moveset----------
+|||Basic moves|||
+Jump: A,B or C.
+Look up: Up.
+Crouch: Down.
+Walk: Hold left or right.
+Roll: While moving, down.
+
+|||Extra Moves|||
+Spin Dash: Hold down and tap A, B, or C to rev up. (Sonic, Shadow, & Mighty only)
+Spin Dash (CD): Hold down and press A, B, or C, then release after it's charged. (Metal only)
+Super Peelout: Up and A,B or C. (Sonic, Metal, & Mighty only)
+Double jump: After a jump, C.
+Diagonal Kick: After a jump, B. (Sonic only)
+Air roll: After walking off a ledge, A or C. (Sonic only)
+Chaos Spear: Press B. (Shadow only)
+Wall Kick: Hold any Jump button and the direction of the wall you want to cling to. Release that direction or release the jump button to kick off of it. (Mighty only)
+Hammer Drop: Press B after jumping. (Mighty only)
+
+|||Advanced Moves|||
+Wall Kick High Jump: While clinging to a wall, use the Double Jump.
+Kick cancel: While kicking, press C.
+Peelout launch: After a peelout, once you reach a ramp, jump.
+
+-----------Items------------
+
+Ring: An essential item for gameplay, acts as health, a way to gain ponts, and a method to unlock secrets.
+Spring: These come in 2 varities, yellow and red. Yellow let Sonic, Shadow, and Metal bounce up just a bit, but the red ones let them bounce really high up.
+Bumper: Found in Spring City, these are like springs, but they bounce players in all directions.
+Spikes: When touched from the pointed end, the player will take damage
+Lamp Post: When activated, after the player dies, the player will start at the lamp post.
+Sign Post: This is how players complete Acts 1 and 2 of a zone.
+Prison Capsule: This is how players complete Act 3 of a zone, after a boss.
+Switches: These are used to cause an in game event, like making a platform move.
+|||||Monitors|||||
+Ring: Gives the player 10 rings.
+Shield: Gives the player a shield, which acts as an extra hit.
+1-Up: Gives the player another life.
+Invincibility: Makes the player invincible for a short time.
+Speed Up: Triples the player's speed for a short time.
+Eggman: Hurts the player.
+S: Gives the player 50 rings.
+Goggles: Allows player to breathe underwater, until the end of the level.
+
+----------Levels----------
+
+Chaotic Mound - Lush, vibrant hills with lots of flowers and trees.
+Magma Tomb - Mysterious ruins. Why is it so hot..? Oh, there's lava right beneath me, that's why.
+Spring City - Bright lights, colors all around!
+Damp Relic - Oh, come on! Stupid bubbles!
+Starry Metro - More bright lights, and a few less colors, but it's still pretty bright.
+Badnik Factory - Eggman's base of operations. You're almost there!
+Last Fight - It's showdown time!
+
+----------Badniks---------
+
+Motobug: Moves back and forth.
+Buzz bomber: Flies by, then shoots a bullet.
+Crabmeat: Walks back and forth, then fires 2 bullets.
+Chomper: Jumps up and down.
+Newtron (Blue): Appears and flies on the ground.
+Newtron (Green): Appears and shoots a bullet.
+Splats: Bounces up and down while moving left and right. *UNUSED. NOT EVEN CODED.*
+Basaran: Drops from the cieling and flies by.
+Catarkiller: Slowly wiggles back and forth.
+Yardin: Moves back and forth, cannot be jumped on.
+Roller: Rolls by, then pops up and is vunerable.
+Burrobot: Waits until the player is near and jumps out of the ground.
+Orbinaut (Red): Throws spiky balls at player when they get near.
+Orbinaut (Green): Hovers and moves to the left.
+Jaws: Swims back and forth.
+Bomb: Starts a fuse when the player gets near. Once the fuse runs out, it blows up into 4 projectiles.
+Ball Hog: Throws explosive balls.
+
+----------Bosses----------
+
+Wrecking Ball: A large ball that can hit you.
+Flame Thrower: Fire balls are shot down, which sets a platform on fire.
+Spike: A spike that can destroy the platform below.
+Chase: A chase up a difficult and annoying course.
+Spring Boards: Spike balls are dropped, which can be used as a projectiles, or as a spring.
+Crushers and Lazers: 5 Pistons attempt to crush the player, in between piston attacks, lazer balls will home in on the player.
+
+----------Soundtrack (OST)----------
+
+CM Act 1: Green Hills Zone (Sonic 2 8-Bit)
+CM Act 2: Green Grove 1 (Sonic 3D Blast [Genesis])
+CM Act 3: Dreams of an Absolution (Sonic The Hedgehog [2006])
+MT Acts 1 & 3: MZ (Sonic The Hedgehog [1991])
+MT Act 2:	Red Volcano Zone (Sonic Robo Blast 2)
+SC Act 1-3: SYZ (Sonic The Hedgehog [1991])
+DR Act 1: LZ (Sonic The Hedgehog [1991])
+DR Act 2: Misty Rain (MegaMan ZX)
+DR Act 3: LZ (Sonic The Hedgehog [1991])
+SM Act 1-3: SLZ (Sonic The Hedgehog [1991])
+BF Act 1: Metallic Madness, Present, JP (Sonic The Hedgehog CD)
+BF Act 2-3: SBZ (Sonic The Hedgehog [1991])
+Last Battle/Overclocked Metal Theme: What I'm Made Of (Sonic Heroes)
+Invincibility (Sonic): Invincibility (Sonic Mania)
+Invincibility (Shadow): All Hail Shadow (Shadow The Hedgehog)
+Speed Up (Sonic): Zero's theme (MegaMan X)
+Speed Up (Shadow): I Am... (All of Me) (Shadow The Hedgehog)
+Dark Theme: Bonus Stage (Sonic Spinball [Game Gear])
+Game Over: Game Over (Sonic Robo Blast 2)
+
+------------Sonic The Hedgehog Kyukyoku Update Log------------
+
+Build 1: Fixed all bugs found on Sonic Retro's community hacking guide. Added stomp and double jump. Added Eggman and Goggle monitors. Added different Sega screen.
+Build 2: Added SSRG screen. Added Sonic 2 Level Select. Added dynamic palettes.
+{Gemini becomes involved}
+Build 3: Added Sonic 2 Shield Art. Added Sonic Before (or After, idk) The Sequel's Sonic art.
+Build 4: Code from STH Fixed has been ported. Sonic 3's Sonic art ported from S1Winter. Sonic 3 Prototype "Score, Time and Rings" HUD added. Life counter also ported from S1Winter. Spindash Added.
+Build 5: Added dynamic playlists. Added songs 94-9F to sound test. Bug fixes. Air roll added.
+Build 6: Attempted to add Shadow, failed. Attempted to add Drop Dash, failed. Added Peelout.  (Sonic Ultima Showcase video)
+(Hack is renamed from Sonic Ultima to Sonic Kyukyoku)
+Build 7: Attempted to port LuigiXHero's SCD Art Test's Stardust Speedway (StarLight) and Metallic Madness (Scrap Brain), failed. Sound test updated. Special stage 1 changed.
+Build 8: Added Gemini0 and Kilo splash screen. Bug fixes
+Build 9: Header, credits edited. Special stage 1 had changed back.
+Build 10: Added more animations. Sound test updated again. Attempted to add Metal Sonic, canceled. Bug fixes
+Build 11-13: Attempted to add Metal, Shadow, Knux and Mighty, failed. (April 7, 2018 Twitch livestream). Lots and lots of checksum errors.
+Build 14: Added Sonic Boom's (Hack, not song or game) diagonal kick. Installed Mega PCM. Ported some Unleashed sound clips. More clips were installed, but temporarily unused.
+Build 15: Added Dark Sonic, using (Shadow05's shitty guide) First 5 or so chunks in GHZ 1 changed. (Dark Sonic Test video) G&K splash screen used a Fist Bump mashup (Canceled). G&K splash screen temporarily used a very bitcrushed Sonic Boom (song)
+Build 16: Added Dark Sonic's transformation animation. G&K splash screen goes back to Misty Ruins Act 1.
+Build 17: Added Dark Sonic's palette cycle (Doesn't alternate however)
+Build 18: Rest of the Unleashed clips were programmed.
+Build 19: Fixed bug, when Ring monitor doesn't give 10 rings, when Dark.
+Build 20: Fixed bug, not needing 6 Chaos Emeralds to transform. Made speed up power-up use it's own song.
+Build 21: Fixed bug, Dark's speed getting nerfed, when you get speed up power-up and it runs out. Fixed continue screen animation bugs.
+Build 22: Fixed bug, stars continue to circle Dark when you grab invincibility power-up.
+Build 23: Fixed bug, no music plays after speed up power-up runs out.
+Build 24: Changed palettes where it uses Sonic's original S1 palette.
+Build 25: Changed Green Hill Act 1's music to "Walkin'", from Sonic Crackers. Level design for GHZ1 is *mostly* finished.
+Build 26: (same day as 27 and 28) Green Hill Act 1's level layout is finished. INI conversion from Git to 2005 is in progress.
+Build 27: (same day as 26 and 28) Dark Sonic's palette cycle is now actually a cycle. He can also smash walls by walking into them.
+Build 28: (same day as 26 and 27) Sonic's sprite on the title screen is changed. Sonic can only transform if you're pressing A.
+Build 29: Added Shadow.
+Build 30: Added Shadow's life counter, signpost, and Chaos Spear.
+Build 31: Changed Chaos Spear to red, for easy viewing.
+Build 32: Removed voice clips to fix 2 issues.
+Build 33: Made a temporary Emerald Monitor that replaced the S Monitor for a short time.
+Build 34: Changed the names of each world.
+Build 35: Gave some stages new music.
+Build 36: Added Metal Sonic.
+Build 37: Metal Sonic can now turn Super, and has a seperate palette cycle from Sonic.
+Build 38: Added a character select menu. Demos no longer play.
+Build 39: Added more frames to Metal Sonic's waiting animation.
+Build 40: Added the fourth playable character, Mighty. Adding him somehow fixed the bug that Metal Sonic had when trying to go back to the title screen.
+Build 41: Added the Hammer Drop for Mighty.
+
+----------------Bugs that still need to be fixed-----------------
+
+------------------------------------------------------------
+BUG TIER LIST:
+1 - Minor bug, nothing too noticeable or annoying
+2 - Definitely there, a little aggrivating
+3 - Definitely there, can fuck right off
+4 - Softlock
+5 - Crash/"WHAT THE FUCK IS THIS SHIT"
+6 - Doesn't work on hardware. FIX THESE IMMEDIATELY.
+------------------------------------------------------------
+
+Dark Sonic's palette cycle being blue in SBZ1, and red in SBZ2 & Final. *Note that Dark can only be accessed in Final by cheating. (2)
+Flowers in the good ending sequence. (1???)
+Dark Sonic not having an underwater palette. (2)
+Songs not restoring properly. (2)
+Dark's theme not playing after boss fight (same goes with invincibility, and presumingly speed up, too) (3)
+Dark's theme not playing after drowning theme stops. (3)
+Being able to pop Eggman like a Badnik with the down-kick. (4)
+Dark Sonic transformation actually freezes you at the goalpost if you try to transform. (Avoided by change made in Build 28.) (1)
+Chaos Spear sometimes creates a garbled mess that goes in the same direction and at the same speed as the spear itself. (3)
+Crash in GHZ2, when playing as Shadow. (5)
+Damp Relic and Badnik Factory as a whole don't load when playing as Shadow, Metal, or Mighty.(4)
+Speed shoes timer can cancel out invincibility/Dark. (3)
+Chaos Spears don't affect Yadrins. (2)
+
+------------------------------------------------------------
+
+---------------Features to be (hopefully) added ---------------
+
+-New Zones.
+-Custom Kyukyoku title screen.
+-Improved G&K splash screen.
+-New bosses.
+-New enemies.
+-S1 Mobile Level Select. (Icons)
+-New stage chunks for existing zones
+
+-----------------------------------------------------------
+
+----------Credits----------
+
+Sonic sprites - Facu
+Shadow sprites - Gardow
+Peelout code - LuigiXHero
+Double Jump code - EB
+Air Roll code - Ziro
+SonLVL - MainMemory
+Flex 2 - snjenkoi
+Shadow's Chaos Spear code (originally MMZ-styled bullets) - TheStoneBanana & Gemini0
+Metal Sonic sprites - Lone Devil
+Character select menu (the one that actually fucking works) - TheStoneBanana
+Mighty sprites - Team Megamix
+Wall Kick code - Mercury
+New life icons and signpost edits - LJSTAR
