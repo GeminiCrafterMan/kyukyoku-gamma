@@ -29,27 +29,6 @@
             }
         },
         {
-            "name": "Sonic (Old)",
-            "palettes": [],
-            "art": {
-                "path": "artunc\\S1 Sonic (3-26-2018).bin",
-                "compression": "Uncompressed"
-            },
-            "mappings": {
-                "path": "_maps\\S1 Sonic (3-26-2018).asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            },
-            "dplcs": {
-                "enabled": true,
-                "path": "_inc\\S1 Sonic (3-26-2018).asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            }
-        },
-        {
             "name": "Title Screen Sonic",
             "palettes": [
                 {
@@ -337,32 +316,6 @@
             }
         },
         {
-            "name": "Mania Sonic (Unused)",
-            "palettes": [
-                {
-                    "path": "pallet\\ClassicMG.bin",
-                    "length": 1
-                }
-            ],
-            "art": {
-                "path": "artunc\\ManiaSonic.bin",
-                "compression": "Uncompressed"
-            },
-            "mappings": {
-                "path": "_maps\\ManiaSonic.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            },
-            "dplcs": {
-                "enabled": true,
-                "path": "_inc\\ManiaSonic Dynamic pattern load cues.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            }
-        },
-        {
             "name": "Robotnik",
             "palettes": [
                 {
@@ -482,76 +435,6 @@
             },
             "mappings": {
                 "path": "_maps\\obj22.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            },
-            "dplcs": {
-                "enabled": false,
-                "path": "",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            }
-        },
-        {
-            "name": "Sonic (8-bit)",
-            "palettes": [],
-            "art": {
-                "path": "artunc\\8bitboy.bin",
-                "compression": "Uncompressed",
-                "accessor": ""
-            },
-            "mappings": {
-                "path": "_maps\\8bitboy.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": "",
-                "accessor": ""
-            },
-            "dplcs": {
-                "enabled": true,
-                "path": "_inc\\8bitboy pattern load cues.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            }
-        },
-        {
-            "name": "Knuckles",
-            "palettes": [
-                {
-                    "path": "pallet\\Knuckles.bin",
-                    "length": 1
-                }
-            ],
-            "art": {
-                "path": "artunc\\Knuckles.bin",
-                "compression": "Uncompressed"
-            },
-            "mappings": {
-                "path": "_maps\\Knuckles.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            },
-            "dplcs": {
-                "enabled": true,
-                "path": "_inc\\Knuckles.asm",
-                "format": "Sonic 1",
-                "customDefinition": "",
-                "label": ""
-            }
-        },
-        {
-            "name": "Knuckles - Life Icon",
-            "palettes": [],
-            "art": {
-                "path": "artnem\\lifeknux.bin",
-                "compression": "Nemesis"
-            },
-            "mappings": {
-                "path": "",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""

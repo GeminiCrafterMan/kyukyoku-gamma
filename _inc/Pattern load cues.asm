@@ -17,9 +17,8 @@
 	dc.w PLC_SBZAnimals-ArtLoadCues, PLC_SpeStResult-ArtLoadCues
 	dc.w PLC_Ending-ArtLoadCues, PLC_TryAgain-ArtLoadCues
 	dc.w PLC_EggmanSBZ2-ArtLoadCues, PLC_FZBoss-ArtLoadCues
-	dc.w PLC_SonicLives-ArtLoadCues
-	dc.w PLC_ShadowLives-ArtLoadCues, PLC_MetalLives-ArtLoadCues
-	dc.w PLC_MightyLives-ArtLoadCues, PLC_KnuxLives-ArtLoadCues
+	dc.w PLC_SonicLives-ArtLoadCues, PLC_ShadowLives-ArtLoadCues
+	dc.w PLC_MetalLives-ArtLoadCues, PLC_MightyLives-ArtLoadCues
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - standard block 1
 ; ---------------------------------------------------------------------------
@@ -549,18 +548,6 @@ PLC_MetalLives: dc.w 0
 ; ---------------------------------------------------------------------------
 PLC_MightyLives: dc.w 0
 		dc.l Nem_LivesMighty	; lives	counter
-		dc.w $FA80
-;		dc.l Nem_Monitors	; monitors
-;		dc.w $D000
-;		dc.l Nem_Shield		; shield
-;		dc.w $A820
-;		dc.l Nem_Stars		; invincibility	stars
-;		dc.w $AB80
-; ---------------------------------------------------------------------------
-; Pattern load cues - Knux's life icon
-; ---------------------------------------------------------------------------
-PLC_KnuxLives: dc.w 3
-		dc.l Nem_LivesKnux	; lives	counter
 		dc.w $FA80
 ;		dc.l Nem_Monitors	; monitors
 ;		dc.w $D000

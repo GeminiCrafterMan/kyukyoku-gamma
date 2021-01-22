@@ -70,9 +70,6 @@
 	dc.l Pal_Mighty
 	dc.w $FB00
 	dc.w 7
-	dc.l Pal_Knux
-	dc.w $FB00
-	dc.w 7
 	dc.l Pal_SpecialSh
 	dc.w $FB00
 	dc.w $1F

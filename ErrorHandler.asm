@@ -14,10 +14,11 @@
 ; Screen appearence flags
 _eh_address_error	equ	$01		; use for address and bus errors only (tells error handler to display additional "Address" field)
 _eh_show_sr_usp		equ	$02		; displays SR and USP registers content on error screen
+_eh_disassemble		equ	$10		; disassembles the instruction where the error happened + vint and hint handlers
 
 ; Advanced execution flags
 ; WARNING! For experts only, DO NOT USES them unless you know what you're doing
-_eh_return			equ	$20
+_eh_return		equ	$20
 _eh_enter_console	equ	$40
 _eh_align_offset	equ	$80
 
@@ -31,59 +32,57 @@ _eh_default			equ	0 ;_eh_show_sr_usp
 ; ---------------------------------------------------------------
 
 BusError:
-	__ErrorMessage "BUS ERROR", _eh_default|_eh_address_error
+	__ErrorMessage "BUS ERROR", _eh_default|_eh_address_error|_eh_disassemble
 
 AddressError:
-	__ErrorMessage "ADDRESS ERROR", _eh_default|_eh_address_error
+	__ErrorMessage "ADDRESS ERROR", _eh_default|_eh_address_error|_eh_disassemble
 
 IllegalInstr:
-	__ErrorMessage "ILLEGAL INSTRUCTION", _eh_default
+	__ErrorMessage "ILLEGAL INSTRUCTION", _eh_default|_eh_disassemble
 
 ZeroDivide:
-	__ErrorMessage "ZERO DIVIDE", _eh_default
+	__ErrorMessage "ZERO DIVIDE", _eh_default|_eh_disassemble
 
 ChkInstr:
-	__ErrorMessage "CHK INSTRUCTION", _eh_default
+	__ErrorMessage "CHK INSTRUCTION", _eh_default|_eh_disassemble
 
 TrapvInstr:
-	__ErrorMessage "TRAPV INSTRUCTION", _eh_default
+	__ErrorMessage "TRAPV INSTRUCTION", _eh_default|_eh_disassemble
 
 PrivilegeViol:
-	__ErrorMessage "PRIVILEGE VIOLATION", _eh_default
+	__ErrorMessage "PRIVILEGE VIOLATION", _eh_default|_eh_disassemble
 
 Trace:
-	__ErrorMessage "TRACE", _eh_default
+	__ErrorMessage "TRACE", _eh_default|_eh_disassemble
 
 Line1010Emu:
-	__ErrorMessage "LINE 1010 EMULATOR", _eh_default
+	__ErrorMessage "LINE A EMULATOR", _eh_default|_eh_disassemble
 
 Line1111Emu:
-	__ErrorMessage "LINE 1111 EMULATOR", _eh_default
+	__ErrorMessage "LINE F EMULATOR", _eh_default|_eh_disassemble
 
 ErrorExcept:
-	__ErrorMessage "ERROR EXCEPTION", _eh_default
-
-
+	__ErrorMessage "ERROR EXCEPTION", _eh_default|_eh_disassemble
 
 ; ---------------------------------------------------------------
 ; Import error handler global functions
 ; ---------------------------------------------------------------
 
-ErrorHandler.__global__error_initconsole equ ErrorHandler+$146
-ErrorHandler.__global__errorhandler_setupvdp equ ErrorHandler+$234
-ErrorHandler.__global__console_loadpalette equ ErrorHandler+$A1C
-ErrorHandler.__global__console_setposasxy_stack equ ErrorHandler+$A58
-ErrorHandler.__global__console_setposasxy equ ErrorHandler+$A5E
-ErrorHandler.__global__console_getposasxy equ ErrorHandler+$A8A
-ErrorHandler.__global__console_startnewline equ ErrorHandler+$AAC
-ErrorHandler.__global__console_setbasepattern equ ErrorHandler+$AD4
-ErrorHandler.__global__console_setwidth equ ErrorHandler+$AE8
-ErrorHandler.__global__console_writeline_withpattern equ ErrorHandler+$AFE
-ErrorHandler.__global__console_writeline equ ErrorHandler+$B00
-ErrorHandler.__global__console_write equ ErrorHandler+$B04
-ErrorHandler.__global__console_writeline_formatted equ ErrorHandler+$BB0
-ErrorHandler.__global__console_write_formatted equ ErrorHandler+$BB4
-
+ErrorHandler.__global__error_initconsole equ ErrorHandler+$158
+ErrorHandler.__global__errorhandler_setupvdp equ ErrorHandler+$25C
+ErrorHandler.__global__console_loadpalette equ ErrorHandler+$AE2
+ErrorHandler.__global__console_setposasxy_stack equ ErrorHandler+$B1E
+ErrorHandler.__global__console_setposasxy equ ErrorHandler+$B24
+ErrorHandler.__global__console_getposasxy equ ErrorHandler+$B50
+ErrorHandler.__global__console_startnewline equ ErrorHandler+$B72
+ErrorHandler.__global__console_setbasepattern equ ErrorHandler+$B9A
+ErrorHandler.__global__console_setwidth equ ErrorHandler+$BAE
+ErrorHandler.__global__console_writeline_withpattern equ ErrorHandler+$BC4
+ErrorHandler.__global__console_writeline equ ErrorHandler+$BC6
+ErrorHandler.__global__console_write equ ErrorHandler+$BCA
+ErrorHandler.__global__console_writeline_formatted equ ErrorHandler+$C76
+ErrorHandler.__global__console_write_formatted equ ErrorHandler+$C7A
+ErrorHandler.__global__decode68k equ ErrorHandler+$CE6
 
 ; ---------------------------------------------------------------
 ; Error handler external functions (compiled only when used)

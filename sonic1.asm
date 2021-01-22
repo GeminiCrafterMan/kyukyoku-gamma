@@ -2664,7 +2664,6 @@ Pal_SpeContinue:incbin	pallet\sscontin.bin	; special stage results screen contin
 Pal_Ending:	incbin	pallet\ending.bin	; ending sequence pallets
 Pal_Shadow:	incbin	pallet\Shadow.bin
 Pal_Mighty:	incbin	pallet\Mighty.bin
-Pal_Knux:	incbin	pallet\Knux.bin
 Pal_SpecialSh:	incbin	pallet\specialsh.bin
 Pal_SpecialM:	incbin	pallet\specialm.bin
 
@@ -3555,21 +3554,14 @@ loc_37FC:
 		cmp.b	#2, ($FFFFFFF6).w
 		beq.s	MetLife_Load
 		cmp.b	#3, ($FFFFFFF6).w
-		beq.s	MtyLife_Load
-		cmp.b	#4, ($FFFFFFF6).w
 		bne.s	SonLife_Load
-		moveq	#$24,d0
+		moveq	#$23,d0
 		bsr.w	LoadPLC
 		jmp		Level_ClrRam
 
 SonLife_Load:
 		moveq	#$20,d0
 		bsr.w	LoadPLC		; load standard	patterns
-		jmp		Level_ClrRam
-
-MtyLife_Load:
-        moveq    #$23,d0
-        bsr.w    LoadPLC
 		jmp		Level_ClrRam
 
 MetLife_Load:
@@ -3651,8 +3643,6 @@ Level_LoadPal:
         beq.s   Level_LoadPal_shad ; if not, cancel
 		cmpi.b	 #$03, ($FFFFFFF6).w ; is the player Mighty?
 		beq.s	Level_LoadPal_mty
-		cmpi.b	 #$04, ($FFFFFFF6).w ; is the player Knuckles?
-		bne.s	Level_LoadPal_cont
 		moveq	#$17,d0
 		jmp		Level_LoadPal_cont
 
@@ -3740,11 +3730,6 @@ loc_3946:
 		jsr	FloorLog_Unk
 		bsr.w	ColIndexLoad
 		bsr.w	LZWaterEffects
-        cmp.b    #4,($FFFFFFF6).w    ; is the character actually knux?
-		bne.s	@cont1
-		move.b	#6,($FFFFD000).w
-		bsr.s	@cont2
-@cont1:
 		move.b	#1,($FFFFD000).w ; load	Sonic object
 @cont2:
 		tst.w	($FFFFFFF0).w
@@ -4659,12 +4644,9 @@ SignpostArtLoad:			; XREF: Level
         cmp.b    #1,($FFFFFFF6).w    ; is the character actually shadow?
         beq.s    @player_is_sonic    ; if so, branch
         lea    (Art_MetalPost).l,a0
-        cmp.b    #2,($FFFFFFF6).w    ; is the character actually shadow?
+        cmp.b    #2,($FFFFFFF6).w    ; is the character actually mighty?
         beq.s    @player_is_sonic    ; if so, branch
         lea    (Art_MightyPost).l,a0
-        cmp.b    #3,($FFFFFFF6).w    ; is the character actually shadow?
-        beq.s    @player_is_sonic    ; if so, branch
-		lea    (Art_KnuxPost).l,a0
 @player_is_sonic:
         move.l    #($300/4)-1,d1
 @load_art
@@ -5568,11 +5550,6 @@ End_LoadData:
 		move.b	#1,($FFFFFFFA).w ; enable debug	mode
 
 End_LoadSonic:
-        cmp.b    #4,($FFFFFFF6).w    ; is the character actually knux?
-		bne.s	end_loadsonic_cont
-		move.b	#6,($FFFFD000).w
-		bsr.s	end_loadsonic_cont2
-end_loadsonic_cont:
 		move.b	#1,($FFFFD000).w ; load	Sonic object
 end_loadsonic_cont2:
 		bset	#0,($FFFFD022).w ; make	Sonic face left
@@ -13310,9 +13287,6 @@ loc_A1EC:				; XREF: Obj26_Solid
 		beq.s	loc_A25C	; if yes, branch
 		cmpi.b	#$25,$1C(a1)	; is Sonic stomping?
 		beq.s	loc_A25C	; if yes, branch
-;		cmpi.b	 #$04, ($FFFFFFF6).w ; is the player Knuckles?
-;		cmp.b	#32,$1C(a1) ; is the red boi flying?
-;		beq.s	loc_A25C	; if yes, branch		
 
 loc_A20A:
 		tst.w	d1
@@ -13774,9 +13748,9 @@ Obj0F_PrsStart:
     btst    #3,($FFFFF605).w    ; is right pressed?
     beq.s    @end             ; if not, branch
     add.b    #1,d0            ; increment the character selection
-    cmp.b    #5,d0
+    cmp.b    #4,d0
     blt.s    @do_update
-    move.b    #4,d0
+    move.b    #3,d0
 
 @do_update:
     move.b    d0,$1C(a0)        ; update the button's animation
@@ -16133,19 +16107,8 @@ loc_C5CA:
 		cmpi.b	#$02, ($FFFFFFF6).w ; is the player Metal?
 		beq.s	LoadTitleCardMaps_Metal	; if so, gtfo and load Metal's
 		cmpi.b	#$03, ($FFFFFFF6).w ; is the player Mighty?
-		beq.s	LoadTitleCardMaps_Mighty	; if not, gtfo and load Sonic's
+		bne.s	LoadTitleCardMaps_Sonic	; if not, gtfo and load Sonic's
 		move.l	#Map_obj3A_Mty,4(a1)	; Load Mighty's
-		cmpi.b	#$04, ($FFFFFFF6).w ; is the player Knux?
-		beq.s	LoadTitleCardMaps_Knux	; if so, gtfo and load Knux's
-		move.l	#Map_obj3A_KTE,4(a1)	; Load Knux's
-		jmp		LoadTitleCardMaps_Cont
-		
-LoadTitleCardMaps_Mighty:
-		move.l	#Map_obj3A_Mty,4(a1)
-		jmp		LoadTitleCardMaps_Cont
-		
-LoadTitleCardMaps_Knux:
-		move.l	#Map_obj3A_KTE,4(a1)
 		jmp		LoadTitleCardMaps_Cont
 
 LoadTitleCardMaps_Metal:
@@ -16703,7 +16666,6 @@ Map_obj3A:	include "_maps\SONIC HAS PASSED.asm"
 Map_obj3A_Sh:	include "_maps\SHADOW HAS PASSED.asm"
 Map_obj3A_Met:	include "_maps\METAL HAS PASSED.asm"
 Map_obj3A_Mty:	include "_maps\MIGHTY HAS PASSED.asm"
-Map_obj3A_KTE:	include "_maps\KNUX HAS PASSED.asm"
 ; ---------------------------------------------------------------------------
 ; Sprite mappings - special stage results screen
 ; ---------------------------------------------------------------------------
@@ -24790,9 +24752,6 @@ word_1E0EC:	dc 1
 	dc $F0BA
 	even
 
-Obj06:
-		include "Knuckles.asm"
-
 ; ---------------------------------------------------------------------------
 ; Object 01 - Sonic
 ; ---------------------------------------------------------------------------
@@ -27631,13 +27590,7 @@ Obj4A_Display:
 Obj4A_LoadSonic:			; XREF: Obj4A_Index
 		subq.w	#1,$30(a0)	; subtract 1 from time
 		bne.s	Obj4A_Wait	; if time remains, branch
-        cmp.b    #4,($FFFFFFF6).w    ; is the character actually knux?
-		bne.s	@cont1
-		move.b	#6,($FFFFD000).w ; load knux
-		bsr.s	@cont2
-@cont1:
 		move.b	#1,($FFFFD000).w ; load	Sonic object
-@cont2:
 		jmp	DeleteObject
 ; ===========================================================================
 
@@ -36515,7 +36468,6 @@ loc_1AF1E:
 		cmpi.b	#$24,$1C(a0) ; is sonic stomping?
 		bne.s	IsSonicDKing
 		bra.s	DontRevYMonitor
-		cmpi.b	 #$04, ($FFFFFFF6).w ; is the player Knuckles?
 		cmpi.b	#$32,$1C(a0) ; is sonic stomping?
 		bne.s	IsSonicDKing
 		bra.s	DontRevYMonitor
@@ -36537,7 +36489,6 @@ IsSonicDKing:
 		cmpi.b	#$25,$1C(a0) ; is sonic stomping?
 		bne.s	locret_1AF2E
 		bra.s	DontRevYMonitor
-		cmpi.b	 #$04, ($FFFFFFF6).w ; is the player Knuckles?
 		cmpi.b	#$32,$1C(a0) ; is sonic stomping?
 		bne.s	locret_1AF2E
 		bra.s	DontRevYMonitor
@@ -39757,8 +39708,6 @@ Map_Metal:
 	include "_maps\Metal.asm"
 Map_Mighty:
 	include "_maps\Mighty.asm"
-SK_Map_Knuckles:
-	include "_maps\Knuckles.asm"
 ; ---------------------------------------------------------------------------
 ; Uncompressed graphics	loading	array for Sonic
 ; ---------------------------------------------------------------------------
@@ -39770,8 +39719,6 @@ MetalDynPLC:
 	include "_inc\Metal dynamic pattern load cues.asm"
 MightyDynPLC:
 	include "_inc\Mighty dynamic pattern load cues.asm"
-SK_PLC_Knuckles:
-	include "_inc\Knuckles.asm"
 ; ---------------------------------------------------------------------------
 ; Uncompressed graphics	- Sonic
 ; ---------------------------------------------------------------------------
@@ -39782,8 +39729,6 @@ Art_Shadow:	incbin	artunc\Shadow.bin	; Shadow
 Art_Metal:	incbin	artunc\Metal.bin
 		even
 Art_Mighty:	incbin	artunc\Mighty.bin
-		even
-SK_ArtUnc_Knux:	incbin	artunc\Knuckles.bin
 		even
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
@@ -40046,8 +39991,6 @@ Nem_LivesMetal:		incbin	artnem\lifemetal.bin
 		even
 Nem_LivesMighty:	incbin	artnem\lifemight.bin
 		even
-Nem_LivesKnux:		incbin	artnem\lifeknux.bin
-		even
 Nem_Ring:	incbin	artnem\rings.bin	; rings
 		even
 Nem_Monitors:	incbin	artnem\monitors.bin	; monitors
@@ -40077,8 +40020,6 @@ Art_ShadowPost:	incbin	artunc\ShadowPost.bin
 Art_MetalPost:	incbin	artunc\MetalPost.bin
 		even
 Art_MightyPost:	incbin	artunc\MightyPost.bin
-		even
-Art_KnuxPost:	incbin	artunc\KnuxPost.bin
 		even
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - continue screen
