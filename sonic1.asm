@@ -25999,8 +25999,8 @@ locret_134D2:
 
 ; loc_1AB38: test_set_SS:
 Sonic_CheckGoSuper:
-	cmpi.b 	#$01, ($FFFFFFF6).w ; if player flag set?
-    beq.w 	return_1ABA4
+;	cmpi.b 	#$01, ($FFFFFFF6).w ; if player flag set?
+;	beq.w 	return_1ABA4
 	tst.b	(Super_Sonic_flag).w	; is Sonic already Super?
 	bne.w	return_1ABA4		; if yes, branch
 	cmpi.b	#6,($FFFFFE57).w
@@ -26053,8 +26053,8 @@ return_1ABA4:
 
 ; loc_1ABA6:
 Sonic_Super:
-	cmpi.b 	#$01, ($FFFFFFF6).w ; if player flag set?
-    beq.w 	return_1AC3C
+;	cmpi.b 	#$01, ($FFFFFFF6).w ; if player flag set?
+;	beq.w 	return_1AC3C
 	tst.b	(Super_Sonic_flag).w	; Ignore all this code if not Super Sonic
 	beq.w	return_1AC3C
 	tst.b	(Update_HUD_timer).w
