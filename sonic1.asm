@@ -26036,7 +26036,7 @@ Sonic_CheckGoSuper_Cont:
 ;	jmp (PlaySound_Special).l
 ;	rts
 ;Sonic_SuperTheme:
-	move.w	#$E2,d0         
+	move.w	#$99,d0         
 	jmp	(PlaySound_Unk).l	; load the super theme and return also playmusic doesn't exist
 
 ; ---------------------------------------------------------------------------
