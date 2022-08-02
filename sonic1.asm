@@ -3643,7 +3643,6 @@ Level_LoadPal:
         beq.s   Level_LoadPal_shad ; if not, cancel
 		cmpi.b	 #$03, ($FFFFFFF6).w ; is the player Mighty?
 		beq.s	Level_LoadPal_mty
-		moveq	#$17,d0
 		jmp		Level_LoadPal_cont
 
 Level_LoadPal_mty:
