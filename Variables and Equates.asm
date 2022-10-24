@@ -1,3 +1,43 @@
+BitMapXpos	equ	4
+BitMapYpos	equ	2
+BitMapWidth	equ	256
+BitMapHeight	equ	128
+BitMapCellHeight	equ	(BitMapHeight/8)
+BitMapCellWidth	equ	(BitMapWidth/8)
+WallPalBits	equ	$2000
+MapRowWidth	equ	64
+bitmapaddr	equ $8000
+scrollAaddr	equ	$C000
+spriteaddr	equ	$D800
+hscrolladdr	equ	$DC00
+scrollBaddr	equ	$E000
+windowaddr	equ	$F000
+DMA_ByteInc	equ	$0
+DMA_Length1	equ	$2
+DMA_Length2	equ	$4
+DMA_SrcAdr1	equ	$6
+DMA_SrcAdr2	equ	$8
+DMA_SrcAdr3	equ	$A
+DMA_DMAenbl	equ	$C
+DMA_DstAdr1	equ	$E
+DMA_DstAdr2	equ	$10
+DMA_DMADisbl	equ	$12
+SNDADD		  EQU	 $A04000
+SNDDAT		  EQU	 $A04001
+CNTLA		   EQU	 $A10008
+CNTLB		   EQU	 $A1000A
+CNTLC		   EQU	 $A1000C
+CNTLAW		  EQU	 $A10009
+CNTLBW		  EQU	 $A1000B
+CNTLCW		  EQU	 $A10009
+PPCNTL		  EQU	 $A1000D
+PPDATA		  EQU	 $A10007
+BUSREQ		  EQU	 $A11100
+BUSRES		  EQU	 $A11200
+Z80RAM		  EQU	 $A00000
+VDATA		   EQU	 $C00000
+VCTRL		   EQU	 $C00004
+
 ; size variables - you'll get an informational error if you need to change these...
 ; they are all in units of bytes
 Size_of_DAC_samples =		$2F00

@@ -22,23 +22,29 @@
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - standard block 1
 ; ---------------------------------------------------------------------------
-PLC_Main:	dc.w 2
+PLC_Main:	dc.w 3
 		dc.l Nem_Lamp		; lamppost
 		dc.w $D800
 		dc.l Nem_Hud		; HUD
 		dc.w $D940
 		dc.l Nem_Ring		; rings
 		dc.w $F640
+		dc.l Nem_Spikes		; spikes
+		dc.w $A360
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - standard block 2
 ; ---------------------------------------------------------------------------
-PLC_Main2:	dc.w 2
+PLC_Main2:	dc.w 4
 		dc.l Nem_Monitors	; monitors
 		dc.w $D000
 		dc.l Nem_Shield		; shield
 		dc.w $A820
 		dc.l Nem_Stars		; invincibility	stars
 		dc.w $AB80
+		dc.l Nem_HSpring	; horizontal spring
+		dc.w $A460
+		dc.l Nem_VSpring	; vertical spring
+		dc.w $A660
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - explosion
 ; ---------------------------------------------------------------------------
@@ -54,11 +60,7 @@ PLC_GameOver:	dc.w 0
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Green Hill
 ; ---------------------------------------------------------------------------
-PLC_GHZ:	dc.w $9
-;		dc.l Nem_GHZ_1st	; GHZ main patterns
-;		dc.w 0
-;		dc.l Nem_GHZ_2nd	; GHZ secondary	patterns
-;		dc.w $39A0
+PLC_GHZ:	dc.w 6
 		dc.l Nem_Stalk		; flower stalk
 		dc.w $6B00
 		dc.l Nem_PplRock	; purple rock
@@ -73,12 +75,6 @@ PLC_GHZ:	dc.w $9
 		dc.w $9360
 		dc.l Nem_Motobug	; motobug enemy
 		dc.w $9E00
-		dc.l Nem_Spikes		; spikes
-		dc.w $A360
-		dc.l Nem_HSpring	; horizontal spring
-		dc.w $A460
-		dc.l Nem_VSpring	; vertical spring
-		dc.w $A660
 PLC_GHZ2:	dc.w 5
 		dc.l Nem_Swing		; swinging platform
 		dc.w $7000
@@ -96,8 +92,6 @@ PLC_GHZ2:	dc.w 5
 ; Pattern load cues - Labyrinth
 ; ---------------------------------------------------------------------------
 PLC_LZ:		dc.w $A
-;		dc.l Nem_LZ		; LZ main patterns
-;		dc.w 0
 		dc.l Nem_LzBlock1	; block
 		dc.w $3C00
 		dc.l Nem_LzBlock2	; blocks
@@ -120,7 +114,7 @@ PLC_LZ:		dc.w $A
 		dc.w $7980
 		dc.l Nem_Burrobot	; burrobot enemy
 		dc.w $94C0
-PLC_LZ2:	dc.w $B
+PLC_LZ2:	dc.w 8
 		dc.l Nem_LzPole		; pole that breaks
 		dc.w $7BC0
 		dc.l Nem_LzDoor2	; large	horizontal door
@@ -139,18 +133,10 @@ PLC_LZ2:	dc.w $B
 		dc.w $A1E0
 		dc.l Nem_Cork		; cork block
 		dc.w $A000
-		dc.l Nem_Spikes		; spikes
-		dc.w $A360
-		dc.l Nem_HSpring	; horizontal spring
-		dc.w $A460
-		dc.l Nem_VSpring	; vertical spring
-		dc.w $A660
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Marble
 ; ---------------------------------------------------------------------------
 PLC_MZ:		dc.w 8
-;		dc.l Nem_MZ		; MZ main patterns
-;		dc.w 0
 		dc.l Nem_MzMetal	; metal	blocks
 		dc.w $6000
 		dc.l Nem_MzFire		; fireballs
@@ -169,23 +155,15 @@ PLC_MZ:		dc.w 8
 		dc.w $9700
 		dc.l Nem_Cater		; caterkiller enemy
 		dc.w $9FE0
-PLC_MZ2:	dc.w 4
+PLC_MZ2:	dc.w 1
 		dc.l Nem_MzSwitch	; switch
 		dc.w $A260
-		dc.l Nem_Spikes		; spikes
-		dc.w $A360
-		dc.l Nem_HSpring	; horizontal spring
-		dc.w $A460
-		dc.l Nem_VSpring	; vertical spring
-		dc.w $A660
 		dc.l Nem_MzBlock	; green	stone block
 		dc.w $5700
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Star Light
 ; ---------------------------------------------------------------------------
-PLC_SLZ:	dc.w 7
-;		dc.l Nem_SLZ		; SLZ main patterns
-;		dc.w 0
+PLC_SLZ:	dc.w 4
 		dc.l Nem_Bomb		; bomb enemy
 		dc.w $8000
 		dc.l Nem_Orbinaut	; orbinaut enemy
@@ -196,12 +174,6 @@ PLC_SLZ:	dc.w 7
 		dc.w $9C00
 		dc.l Nem_SlzWall	; breakable wall
 		dc.w $A260
-		dc.l Nem_Spikes		; spikes
-		dc.w $A360
-		dc.l Nem_HSpring	; horizontal spring
-		dc.w $A460
-		dc.l Nem_VSpring	; vertical spring
-		dc.w $A660
 PLC_SLZ2:	dc.w 5
 		dc.l Nem_Seesaw		; seesaw
 		dc.w $6E80
@@ -219,8 +191,6 @@ PLC_SLZ2:	dc.w 5
 ; Pattern load cues - Spring Yard
 ; ---------------------------------------------------------------------------
 PLC_SYZ:	dc.w 3
-;		dc.l Nem_SYZ		; SYZ main patterns
-;		dc.w 0
 		dc.l Nem_Crabmeat	; crabmeat enemy
 		dc.w $8000
 		dc.l Nem_Buzz		; buzz bomber enemy
@@ -229,7 +199,7 @@ PLC_SYZ:	dc.w 3
 		dc.w $8F60
 		dc.l Nem_Roller		; roller enemy
 		dc.w $9700
-PLC_SYZ2:	dc.w 7
+PLC_SYZ2:	dc.w 4
 		dc.l Nem_Bumper		; bumper
 		dc.w $7000
 		dc.l Nem_SyzSpike1	; large	spikeball
@@ -240,18 +210,10 @@ PLC_SYZ2:	dc.w 7
 		dc.w $9FE0
 		dc.l Nem_LzSwitch	; switch
 		dc.w $A1E0
-		dc.l Nem_Spikes		; spikes
-		dc.w $A360
-		dc.l Nem_HSpring	; horizontal spring
-		dc.w $A460
-		dc.l Nem_VSpring	; vertical spring
-		dc.w $A660
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Scrap Brain
 ; ---------------------------------------------------------------------------
 PLC_SBZ:	dc.w $A
-;		dc.l Nem_SBZ		; SBZ main patterns
-;		dc.w 0
 		dc.l Nem_Stomper	; moving platform and stomper
 		dc.w $5800
 		dc.l Nem_SbzDoor1	; door
@@ -274,7 +236,7 @@ PLC_SBZ:	dc.w $A
 		dc.w $7EA0
 		dc.l Nem_SbzBlock	; vanishing block
 		dc.w $9860
-PLC_SBZ2:	dc.w $C
+PLC_SBZ2:	dc.w 9
 		dc.l Nem_Cater		; caterkiller enemy
 		dc.w $5600
 		dc.l Nem_Bomb		; bomb enemy
@@ -295,12 +257,6 @@ PLC_SBZ2:	dc.w $C
 		dc.w $9BE0
 		dc.l Nem_LzSwitch	; switch
 		dc.w $A1E0
-		dc.l Nem_Spikes		; spikes
-		dc.w $A360
-		dc.l Nem_HSpring	; horizontal spring
-		dc.w $A460
-		dc.l Nem_VSpring	; vertical spring
-		dc.w $A660
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - title card
 ; ---------------------------------------------------------------------------
@@ -443,10 +399,6 @@ PLC_SpeStResult:dc.w 1
 ; Pattern load cues - ending sequence
 ; ---------------------------------------------------------------------------
 PLC_Ending:	dc.w $C
-;		dc.l Nem_GHZ_1st	; GHZ main patterns
-;		dc.w 0
-;		dc.l Nem_GHZ_2nd	; GHZ secondary	patterns
-;		dc.w $39A0
 		dc.l Nem_Stalk		; flower stalk
 		dc.w $6B00
 		dc.l Nem_EndFlower	; flowers
@@ -516,39 +468,19 @@ PLC_SonicLives: dc.w 0
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Shadow's life icon
 ; ---------------------------------------------------------------------------
-PLC_ShadowLives: dc.w 1
+PLC_ShadowLives: dc.w 0
 		dc.l Nem_LivesShadow		; lives	counter
 		dc.w $FA80
-;		dc.l Nem_Monitors	; monitors
-;		dc.w $D000
-;		dc.l Nem_Shield		; shield
-;		dc.w $A820
-;		dc.l Nem_Stars		; invincibility	stars
-;		dc.w $AB80
-		dc.l Nem_ShadProj    ; Sonic's bullets
-        dc.w $F320
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Metal's life icon
 ; ---------------------------------------------------------------------------
 PLC_MetalLives: dc.w 0
 		dc.l Nem_LivesMetal		; lives	counter
 		dc.w $FA80
-;		dc.l Nem_Monitors	; monitors
-;		dc.w $D000
-;		dc.l Nem_Shield		; shield
-;		dc.w $A820
-;		dc.l Nem_Stars		; invincibility	stars
-;		dc.w $AB80
 ; ---------------------------------------------------------------------------
 ; Pattern load cues - Mighty's life icon
 ; ---------------------------------------------------------------------------
 PLC_MightyLives: dc.w 0
 		dc.l Nem_LivesMighty	; lives	counter
 		dc.w $FA80
-;		dc.l Nem_Monitors	; monitors
-;		dc.w $D000
-;		dc.l Nem_Shield		; shield
-;		dc.w $A820
-;		dc.l Nem_Stars		; invincibility	stars
-;		dc.w $AB80
 		even

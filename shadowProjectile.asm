@@ -13,7 +13,7 @@ Obj_ShadowProjectile_Index:
 ; ===========================================================================
 Obj_ShadowProjectile_Init:
         addq.b    #2,$24(a0)        ; go to the next routine
-        move.l    #Map_Obj02,4(a0)    ; set mappings
+        move.l    #Map_ShadProj,4(a0)    ; set mappings
         move.w    #$1799,2(a0)        ; set VRAM tile
         move.b    #4,1(a0)        ; set render flags
         move.b    #3,$18(a0)        ; set priority
@@ -37,6 +37,12 @@ continueSpear:
         ble.s   @delete    
         jsr     (TouchResponse).l
         jsr     (SpeedToPos).l
+; fake-ass animation routine
+        subq.b  #1,obTimeFrame(a0)
+        bne.s   @cont
+        bchg    #0,obFrame(a0)
+        move.b  #4,obTimeFrame(a0)
+@cont:
         jmp     (DisplaySprite).l
  
 @delete:
@@ -45,10 +51,10 @@ continueSpear:
 ; ---------------------------------------------------------------------------
 ; Art - Chaos Spear
 ; ---------------------------------------------------------------------------
-Nem_ShadProj:	incbin	artnem\chaos_spear.bin ; Sonic's bullets!
+Art_ShadProj:	incbin	"artunc/chaos_spear.bin" ; Sonic's bullets!
 		even
 ; ---------------------------------------------------------------------------
 ; Mappings - Chaos Spear
 ; ---------------------------------------------------------------------------
-Map_Obj02:
-	include	"_maps\Chaos_Spear.asm"
+Map_ShadProj:
+	include	"_maps/Chaos_Spear.asm"

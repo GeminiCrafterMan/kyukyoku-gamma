@@ -5,90 +5,19 @@
 ;Iso Kilo (and his drunk self), Gemini0, DashNK, Foxivael, G4, Edgy The Hedgy.
 ;Based on Hivebrain's June 2005 disassembly.
 
-BitMapXpos	equ	4
-BitMapYpos	equ	2
-BitMapWidth	equ	256
-BitMapHeight	equ	128
-BitMapCellHeight	equ	(BitMapHeight/8)
-BitMapCellWidth	equ	(BitMapWidth/8)
-WallPalBits	equ	$2000
-MapRowWidth	equ	64
-bitmapaddr	equ $8000
-scrollAaddr	equ	$C000
-spriteaddr	equ	$D800
-hscrolladdr	equ	$DC00
-scrollBaddr	equ	$E000
-windowaddr	equ	$F000
-DMA_ByteInc	equ	$0
-DMA_Length1	equ	$2
-DMA_Length2	equ	$4
-DMA_SrcAdr1	equ	$6
-DMA_SrcAdr2	equ	$8
-DMA_SrcAdr3	equ	$A
-DMA_DMAenbl	equ	$C
-DMA_DstAdr1	equ	$E
-DMA_DstAdr2	equ	$10
-DMA_DMADisbl	equ	$12
-SNDADD		  EQU	 $A04000
-SNDDAT		  EQU	 $A04001
-CNTLA		   EQU	 $A10008
-CNTLB		   EQU	 $A1000A
-CNTLC		   EQU	 $A1000C
-CNTLAW		  EQU	 $A10009
-CNTLBW		  EQU	 $A1000B
-CNTLCW		  EQU	 $A10009
-PPCNTL		  EQU	 $A1000D
-PPDATA		  EQU	 $A10007
-BUSREQ		  EQU	 $A11100
-BUSRES		  EQU	 $A11200
-Z80RAM		  EQU	 $A00000
-VDATA		   EQU	 $C00000
-VCTRL		   EQU	 $C00004
-SetVdpRegister  MACRO
-		MOVE.W  #$8000|(\1<<8)|\2,VCTRL; check out the SEGA manual
-		ENDM
-SetVdpRegisterCode	  MACRO
-		and.w   #$00ff,\2			  ; Mask off high part
-		or.w	#$8000|(\1<<8),\2
-		move.w  \2,VCTRL
-		ENDM
-AutoIncrement   MACRO
-		SetVdpRegister  15,\1
-		ENDM
-VramWrtAddr  MACRO
-		MOVE.L  #$40000000|((\1&$3fff)<<16)|((\1>>14)&3),\2
-		ENDM
-VSramWrtAddr  MACRO
-		MOVE.L  #$40000010|((\1&$3fff)<<16)|((\1>>14)&3),\2
-		ENDM
-CramWrtAddr  MACRO
-		MOVE.L  #$C0000000|((\1&$3fff)<<16)|((\1>>14)&3),\2
-		ENDM
-CalcVramWrtAddrCode MACRO
-		move.w  \1,\2		  ; Copy for lower 14 bits
-		and.l   #$3fff,\2	  ; mask
-		lsl.l   #8,\2
-		lsl.l   #8,\2		  ; Shift up
-		or.l	#$40000000,\2  ; Set bit that tells VDP it's a VRAM WRITE
-		lsr.l   #8,\1
-		lsr.l   #6,\1		  ; Shift down 14 bits
-		and.l   #$3,\1
-		or.l	\1,\2		  ; and combine
-		ENDM
-
-align macro
-	cnop 0,\1
-	endm
+; "Kyukyoku Gamma" ""revival"" """project""" by Gemini0 exclusively because holy shit this is awful
 	
 ; >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ; Equates section - Names for variables.
 ; ---------------------------------------------------------------------------
+	include	"Macros.asm"
+
 	include "Variables and Equates.asm"
 
 	include "WJConstants.asm"
 
 Security_Addr =			$A14000	
-		include 	"Debugger.asm"
+		include 	"_inc/ErrorHandler/Debugger.asm"
 
 StartOfRom:
 Vectors:	dc.l $FFFE00, EntryPoint, BusError, AddressError
@@ -1234,9 +1163,9 @@ ProcessDMAQueue_Done:
 ; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
 
 
-	include "NemDec.asm"
+	include "_inc/NemDec.asm"
 	
-	include "CompDec.asm"
+	include "_inc/CompDec.asm"
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to	load pattern load cues
@@ -1701,7 +1630,7 @@ locret_189A:
 ; ||||||||||||||| S U B	R O U T	I N E |||||||||||||||||||||||||||||||||||||||
 
 
-	include "KosDec.asm"
+	include "_inc/KosDec.asm"
 
 ; ---------------------------------------------------------------------------
 ; Pallet cycling routine loading subroutine
@@ -3507,7 +3436,32 @@ MusicList3:	incbin	misc\muslist3.bin
 MusicList4:	incbin	misc\muslist4.bin
 		even
 ; ===========================================================================
-
+LoadPlayerLifeIcons:
+		movem.l	d0-d3,-(sp)
+		moveq	#0,d0
+		move.b	($FFFFFFF6).w,d0
+		move.b	@icons(pc,d0.w),d0
+		jsr		LoadPLC
+		cmpi.b	#1,($FFFFFFF6).w
+		bne.s	@ret
+	@loadSpear:
+		moveq	#0,d1
+		moveq	#0,d2
+		moveq	#0,d3
+		move.l	#Art_ShadProj,d1
+		move.w	#$799,d2    ; get art tile
+		lsl.w   #5,d2	   ; get VRAM address
+		move.w	#16*2,d3	; length of image
+		mulu.w	d3,d0	; source, dest
+		add.w	d0,d0
+		add.w	d0,d1
+		jsr		(QueueDMATransfer).l
+		movem.l	(sp)+,d0-d3
+	@ret:
+		rts
+	
+	@icons:
+		dc.b	$20, $21, $22, $23
 ; ---------------------------------------------------------------------------
 ; Level
 ; ---------------------------------------------------------------------------
@@ -3547,31 +3501,7 @@ loc_37B6:
 loc_37FC:
 		moveq	#1,d0
 		bsr.w	LoadPLC		; load standard	patterns
-        cmp.b    #0,($FFFFFFF6).w
-        beq.s    SonLife_Load
-        cmp.b    #1,($FFFFFFF6).w
-        beq.s    ShadLife_Load
-		cmp.b	#2, ($FFFFFFF6).w
-		beq.s	MetLife_Load
-		cmp.b	#3, ($FFFFFFF6).w
-		bne.s	SonLife_Load
-		moveq	#$23,d0
-		bsr.w	LoadPLC
-		jmp		Level_ClrRam
-
-SonLife_Load:
-		moveq	#$20,d0
-		bsr.w	LoadPLC		; load standard	patterns
-		jmp		Level_ClrRam
-
-MetLife_Load:
-        moveq    #$22,d0
-        bsr.w    LoadPLC
-		jmp		Level_ClrRam
-
-ShadLife_Load:
-        moveq    #$21,d0
-        bsr.w    LoadPLC
+		jsr		LoadPlayerLifeIcons
 
 Level_ClrRam:
 		lea	($FFFFD000).w,a1
@@ -43498,9 +43428,9 @@ Pal_SEGANew:		incbin	"Splash\Palette.bin"
 ; Debugging modules
 ; --------------------------------------------------------------
 
-   include   "ErrorHandler.asm"
+   include   "_inc/ErrorHandler/ErrorHandler.asm"
 
-		include  EniCredProg.asm	; here we include the "Credits_MapLoad" subroutine
+		include  "_inc/EniCredProg.asm"	; here we include the "Credits_MapLoad" subroutine
 		even
 EniCred_0:	incbin	credeni\cred0.bin	; Credits #0 mappings
 		even

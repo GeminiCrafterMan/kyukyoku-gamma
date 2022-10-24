@@ -1,47 +1,51 @@
 {
-    "description": "Flex 2 Project File",
+    "Flex": 2,
     "name": "Sonic Kyukyoku",
+    "node": "1cc2193f-2d37-4305-87c8-f8812fccfc22",
     "objects": [
         {
             "name": "Sonic the Hedgehog",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artunc\\sonic.bin",
-                "compression": "Uncompressed"
+                "path": "artunc/sonic.bin",
+                "compression": "Uncompressed",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Sonic.asm",
+                "path": "_maps/Sonic.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "Sonic_Map"
             },
             "dplcs": {
                 "enabled": true,
-                "path": "_inc\\Sonic dynamic pattern load cues.asm",
+                "path": "_inc/Sonic dynamic pattern load cues.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "Sonic_PLC"
-            }
+            },
+            "uuid": "1c44921c-c219-4f2d-b773-05c7c8f8812f"
         },
         {
             "name": "Title Screen Sonic",
             "palettes": [
                 {
-                    "path": "pallet\\title.bin",
+                    "path": "pallet/title.bin",
                     "length": 4
                 }
             ],
             "art": {
-                "path": "artnem\\titleson.bin",
-                "compression": "Nemesis"
+                "path": "artnem/titleson.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj0E.asm",
+                "path": "_maps/obj0E.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -52,48 +56,52 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "44921cc2-193f-4d37-b305-c7c8f8812fcc"
         },
         {
             "name": "Shadow the Hedgehog",
             "palettes": [
                 {
-                    "path": "pallet\\shadow.bin",
+                    "path": "pallet/shadow.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artunc\\Shadow.bin",
-                "compression": "Uncompressed"
+                "path": "artunc/Shadow.bin",
+                "compression": "Uncompressed",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Shadow.asm",
+                "path": "_maps/Shadow.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "Shadow_Map"
             },
             "dplcs": {
                 "enabled": true,
-                "path": "_inc\\Shadow dynamic pattern load cues.asm",
+                "path": "_inc/Shadow dynamic pattern load cues.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "Shadow_DPLC"
-            }
+            },
+            "uuid": "921cc219-3f2d-4773-85c7-c8f8812fccfc"
         },
         {
             "name": "Chaos Spear",
             "palettes": [
                 {
-                    "path": "pallet\\shadow.bin",
+                    "path": "pallet/shadow.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\chaos_spear.bin",
-                "compression": "Nemesis"
+                "path": "artunc/chaos_spear.bin",
+                "compression": "Uncompressed",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Chaos_Spear.asm",
+                "path": "_maps/Chaos_Spear.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "",
@@ -105,22 +113,25 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "1cc2193f-2d37-4305-87c8-f8812fccfc22",
+            "format": "Sonic 1.js"
         },
         {
             "name": "Monitors",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\monitors.bin",
-                "compression": "Nemesis"
+                "path": "artnem/monitors.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj26.asm",
+                "path": "_maps/obj26.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -131,22 +142,24 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "c2193f2d-3773-45c7-88f8-812fccfc228b"
         },
         {
             "name": "Sonic - Life Icon",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\lifeson.bin",
-                "compression": "Nemesis"
+                "path": "artnem/lifeson.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\life icons.asm",
+                "path": "_maps/life icons.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -157,22 +170,24 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "193f2d37-7305-47c8-b881-2fccfc228b04"
         },
         {
             "name": "Shadow - Life Icon",
             "palettes": [
                 {
-                    "path": "pallet\\shadow.bin",
+                    "path": "pallet/shadow.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\lifeshad.bin",
-                "compression": "Nemesis"
+                "path": "artnem/lifeshad.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\life icons.asm",
+                "path": "_maps/life icons.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -183,22 +198,24 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "3f2d3773-05c7-48f8-812f-ccfc228b04c9"
         },
         {
             "name": "Metal Sonic - Life Icon",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\lifemetal.bin",
-                "compression": "Nemesis"
+                "path": "artnem/lifemetal.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\life icons.asm",
+                "path": "_maps/life icons.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -209,74 +226,80 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "2d377305-c7c8-4881-afcc-fc228b04c937"
         },
         {
             "name": "Metal Sonic",
             "palettes": [
                 {
-                    "path": "pallet\\3KSonic.bin",
+                    "path": "pallet/3KSonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artunc\\Metal.bin",
-                "compression": "Uncompressed"
+                "path": "artunc/Metal.bin",
+                "compression": "Uncompressed",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Metal.asm",
+                "path": "_maps/Metal.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "Metal_Map"
             },
             "dplcs": {
                 "enabled": true,
-                "path": "_inc\\Metal dynamic pattern load cues.asm",
+                "path": "_inc/Metal dynamic pattern load cues.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "Metal_PLC"
-            }
+            },
+            "uuid": "377305c7-c8f8-412f-8cfc-228b04c937c6"
         },
         {
             "name": "Mighty",
             "palettes": [
                 {
-                    "path": "pallet\\Mighty.bin",
+                    "path": "pallet/Mighty.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artunc\\Mighty.bin",
-                "compression": "Uncompressed"
+                "path": "artunc/Mighty.bin",
+                "compression": "Uncompressed",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Mighty.asm",
+                "path": "_maps/Mighty.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "MightyMap"
             },
             "dplcs": {
                 "enabled": true,
-                "path": "_inc\\Mighty dynamic pattern load cues.asm",
+                "path": "_inc/Mighty dynamic pattern load cues.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "MightyPLC"
-            }
+            },
+            "uuid": "7305c7c8-f881-4fcc-bc22-8b04c937c62b"
         },
         {
             "name": "Mighty - Life Icon",
             "palettes": [
                 {
-                    "path": "pallet\\Mighty.bin",
+                    "path": "pallet/Mighty.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\lifemight.bin",
-                "compression": "Nemesis"
+                "path": "artnem/lifemight.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\life icons.asm",
+                "path": "_maps/life icons.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -287,22 +310,24 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "05c7c8f8-812f-4cfc-a28b-04c937c62b39"
         },
         {
             "name": "Moto Bug",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\motobug.bin",
-                "compression": "Nemesis"
+                "path": "artnem/motobug.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj40.asm",
+                "path": "_maps/obj40.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -313,26 +338,28 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "c7c8f881-2fcc-4c22-8b04-c937c62b39cd"
         },
         {
             "name": "Robotnik",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 },
                 {
-                    "path": "pallet\\ghz3.bin",
+                    "path": "pallet/ghz3.bin",
                     "length": 3
                 }
             ],
             "art": {
-                "path": "artnem\\bossmain.bin",
-                "compression": "Nemesis"
+                "path": "artnem/bossmain.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\Eggman.asm",
+                "path": "_maps/Eggman.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -343,23 +370,25 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "c8f8812f-ccfc-428b-84c9-37c62b39cded"
         },
         {
             "name": "FZ/SBZ2 Robotnik",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\sbz2boss.bin",
+                "path": "artnem/sbz2boss.bin",
                 "compression": "Nemesis",
-                "accessor": ""
+                "accessor": "",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj82.asm",
+                "path": "_maps/obj82.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "",
@@ -371,22 +400,24 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "f8812fcc-fc22-4b04-8937-c62b39cdedb1"
         },
         {
             "name": "Crabmeat",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\crabmeat.bin",
-                "compression": "Nemesis"
+                "path": "artnem/crabmeat.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj1F.asm",
+                "path": "_maps/obj1F.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -397,22 +428,24 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "812fccfc-228b-44c9-b7c6-2b39cdedb1c5"
         },
         {
             "name": "Shield",
             "palettes": [
                 {
-                    "path": "pallet\\sonic.bin",
+                    "path": "pallet/sonic.bin",
                     "length": 1
                 }
             ],
             "art": {
-                "path": "artnem\\shield.bin",
-                "compression": "Nemesis"
+                "path": "artnem/shield.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj38.asm",
+                "path": "_maps/obj38.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": "",
@@ -424,17 +457,19 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "2fccfc22-8b04-4937-862b-39cdedb1c5cf"
         },
         {
             "name": "Buzz Bomber",
             "palettes": [],
             "art": {
-                "path": "artnem\\buzzbomb.bin",
-                "compression": "Nemesis"
+                "path": "artnem/buzzbomb.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj22.asm",
+                "path": "_maps/obj22.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -445,17 +480,19 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "ccfc228b-04c9-47c6-ab39-cdedb1c5cfb2"
         },
         {
             "name": "HUD",
             "palettes": [],
             "art": {
-                "path": "artnem\\hud.bin",
-                "compression": "Nemesis"
+                "path": "artnem/hud.bin",
+                "compression": "Nemesis",
+                "offset": 0
             },
             "mappings": {
-                "path": "_maps\\obj21.asm",
+                "path": "_maps/obj21.asm",
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
@@ -466,7 +503,8 @@
                 "format": "Sonic 1",
                 "customDefinition": "",
                 "label": ""
-            }
+            },
+            "uuid": "fc228b04-c937-462b-b9cd-edb1c5cfb268"
         }
     ]
 }
